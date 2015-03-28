@@ -39,7 +39,7 @@ namespace Kalista
             CustomDamageIndicator.Initialize(Damages.GetRendDamage);
 
             // Listen to additional events
-            Game.OnGameUpdate += Game_OnGameUpdate;
+            Game.OnUpdate += Game.OnUpdate;
             Spellbook.OnCastSpell += Spellbook_OnCastSpell;
             Drawing.OnDraw += Drawing_OnDraw;
             Obj_AI_Base.OnProcessSpellCast += Obj_AI_Base_OnProcessSpellCast;
@@ -48,7 +48,7 @@ namespace Kalista
             Orbwalking.OnNonKillableMinion += Orbwalking_OnNonKillableMinion;
         }
 
-        private static void Game_OnGameUpdate(EventArgs args)
+        private static void Game_OnUpdate(EventArgs args)
         {
             // Permanent checks for something like killsteal
             ActiveModes.OnPermaActive();
